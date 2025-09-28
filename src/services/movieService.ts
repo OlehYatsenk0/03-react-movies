@@ -5,7 +5,10 @@ const BASE_URL = "https://api.themoviedb.org/3/search/movie";
 const TOKEN = import.meta.env.VITE_TMDB_TOKEN;
 
 interface MovieSearchResponse {
+  page: number;
   results: Movie[];
+  total_pages: number;
+  total_results: number;
 }
 
 export const fetchMovies = async (query: string): Promise<Movie[]> => {
